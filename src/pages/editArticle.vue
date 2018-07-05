@@ -1,6 +1,10 @@
 <template>
-  <div>
     <div>
+      <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb-item :to="{ path: '/index' }">首页</el-breadcrumb-item>
+        <el-breadcrumb-item :to="{path:'/index'}">文章列表</el-breadcrumb-item>
+        <el-breadcrumb-item>文章编辑</el-breadcrumb-item>
+      </el-breadcrumb>
       <div class="form-item app-flex app-flex-center">
         <div>
           标题
@@ -56,11 +60,10 @@
             @change="onEditorChange($event)"></quill-editor>
         </div>
       </div>
-      <div class="text-center marginT-20">
+      <div class="submit-box marginT-20">
         <el-button size="small" type="success" @click="submitArticle">提交</el-button>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -86,18 +89,6 @@ export default {
           {
             value: "选项2",
             label: "双皮奶"
-          },
-          {
-            value: "选项3",
-            label: "蚵仔煎"
-          },
-          {
-            value: "选项4",
-            label: "龙须面"
-          },
-          {
-            value: "选项5",
-            label: "北京烤鸭"
           }
         ]
       },
@@ -215,6 +206,9 @@ export default {
     padding-right: 20px;
     text-align: right;
   }
+}
+.submit-box {
+  padding-left: 100px;
 }
 </style>
 <style lang="less">
